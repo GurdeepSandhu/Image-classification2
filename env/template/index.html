@@ -1,0 +1,115 @@
+<!doctype HTML>
+<html> 
+    <head>
+        <meta charset = "utf-8">
+        <!-- <link href = "index.css" rel="stylesheet"> -->
+
+
+
+
+        <script type=text/javascript src="{{url_for('static', filename ='JS/opencv.js') }}"></script>
+        <script type=text/javascript src="{{url_for('static', filename ='JS/tf.min.js') }}"></script>
+        <script type=text/javascript src="{{url_for('static', filename ='JS/mobilenet.min.js') }}"></script>
+        <script type=text/javascript src="{{url_for('static', filename ='JS/jquery.min.js') }}"></script>
+        <script type=text/javascript src="{{url_for('static', filename ='JS/tfjs-vis.min.js') }}"></script>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+
+
+        
+
+    </head>
+    <header>
+      <h3> A testing ground for improving accuracy for Deep Learning on the Browser</h3>
+    </header>
+        <body>
+
+
+          
+
+          <p id = "status"> 
+            Video Stream: <span id = "statusVideo"> Initalising </span>
+        </p>
+
+        <p> 
+          Add Image of a dimension size of 224x224
+          <input type="file" id="inputImage" accept="image/*" hidden="hidden"/>
+          <button id="addImage" class = "button"> Add Image</button>
+          </p>
+          
+          <p> 
+          <video id="video" width = "224" height = "224" hidden = "hidden"></video>
+          <canvas id="liveFeed" width = "224" height = "224" > </canvas>
+          <canvas id="canvas" width = "224" height = "224"> </canvas>
+          <canvas id="handMask" width = "224" height = "224"> </canvas>
+          <canvas id="convexHull" width = "224" height = "224"> </canvas>
+          <canvas id="canvasCrop" width = "224" height = "224"> </canvas>
+          <canvas id="handExtraction" width = "224" height = "224"> </canvas>
+          </p>
+
+
+          <P> 
+          <canvas id="rotation-20"  > </canvas>
+          <canvas id="rotation-10" > </canvas>
+          <canvas id="rotation0" > </canvas>
+          <canvas id="rotation10" > </canvas>
+          <canvas id="rotation20" > </canvas>
+        </P>
+
+          <p>  
+            <input id= "txtLabel1" type="text" value="Label: F" class="input" readonly> 
+            <button id= "addLabel1" class = "button"> Add training image </button>
+            <button id= "uploadLabel1" class = "button"> Add Canvas image </button>
+            <span id="numLabel1">0</span> Training images
+          </p>
+
+          <p>  
+               <input id= "txtLabel2" type="text" value="Label: K" class="input" readonly> 
+               <button id= "addLabel2" class = "button"> Add training image </button>
+               <button id= "uploadLabel2" class = "button"> Add Canvas image </button>
+               <span id="numLabel2">0</span> Training images
+          </p>
+
+          <p>  
+              <input id= "txtLabel3" type="text" value="Label: W" class="input" readonly> 
+              <button id= "addLabel3" class = "button"> Add training image </button>            
+              <button id= "uploadLabel3" class = "button"> Add Canvas image </button>
+              <span id="numLabel3">0</span> Training images
+          </p>
+
+            <p>  
+              <input id= "txtLabel4" type="text" value="Label: U" class="input" readonly> 
+              <button id= "addLabel4" class = "button" >  Add training image </button>
+              <button id= "uploadLabel4" class = "button" > Add Canvas image </button>
+              <span id="numLabel4">0</span> Training images
+           </p>
+
+
+
+            <p>
+                <button id="btnPredict"  class = "button"> Start Predicting</button>
+                <span id="lPrediction" > </span>
+                <button id="btnTrain"  class = "button"> Train Model</button>
+                <button id="CheckModel"  class = "button"> CheckModel</button>  
+                <button id="saveModel"  class = "button"> saveModel</button>
+
+        </p>
+
+
+        <p> 
+          <button id="viewMask"> View Mask</button>
+      </p>
+ 
+
+          <script type=text/javascript src="{{url_for('static', filename ='JS/index.js') }}"></script>
+          <script type=text/javascript src="{{url_for('static', filename ='JS/classifier.js') }}"></script>
+          <script type=text/javascript src="{{url_for('static', filename ='JS/dataset.js') }}"></script>
+          <script type=text/javascript src="{{url_for('static', filename ='JS/ImageTransformation.js') }}"></script>
+        </body>
+    </html>
+    
+
+
+
+            
+    
